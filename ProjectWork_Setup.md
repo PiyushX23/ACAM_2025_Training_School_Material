@@ -96,6 +96,7 @@ git --version
    ```bash
    git clone https://github.com/PiyushX23/ACAM_2025_Training_School_Material.git
    ```
+   > **Note:** You don't need a GitHub account to clone public repositories. The command above will work without authentication.
 4. Navigate into the repository:
    ```bash
    cd ACAM_2025_Training_School_Material
@@ -129,6 +130,7 @@ git --version
    jupyter lab
    ```
 3. JupyterLab will open automatically in your default web browser at `http://localhost:8888/lab`
+   > **Note:** No account or sign-up is required to use JupyterLab locally. It runs entirely in your browser but doesn't require any online authentication.
 
 ---
 
