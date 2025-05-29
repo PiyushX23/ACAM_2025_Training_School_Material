@@ -1,47 +1,59 @@
 # Project-Work Setup for ACAM 2025 Training School
 
-This guide provides instructions for setting up JupyterLab on your local machine for the ACAM 2025 Training School. The environment will be pre-configured at the venue, but these instructions are provided for reference.
+This guide provides instructions for setting up a scientific Python environment using Miniforge, which includes conda and mamba for package management. The environment will be pre-configured at the venue, but these instructions are provided for reference.
 
 ## Table of Contents
-- [1. Install Python](#1-install-python)
+- [1. Install Miniforge](#1-install-miniforge)
 - [2. Install Git](#2-install-git)
 - [3. Clone the Training Repository](#3-clone-the-training-repository)
-- [4. Install JupyterLab and Required Libraries](#4-install-jupyterlab-and-required-libraries)
-- [5. Launch JupyterLab](#5-launch-jupyterlab)
-- [6. Troubleshooting](#6-troubleshooting)
+- [4. Create and Activate Conda Environment](#4-create-and-activate-conda-environment)
+- [5. Install Required Packages](#5-install-required-packages)
+- [6. Launch JupyterLab](#6-launch-jupyterlab)
+- [7. Troubleshooting](#7-troubleshooting)
 
 ---
 
-## 1. Install Python
+## 1. Install Miniforge
+
+Miniforge is a minimal installer for conda that uses the community-led conda-forge repository.
 
 ### Windows:
-1. Download and install Python 3.10+ from [python.org](https://www.python.org/downloads/)
-   - Check "Add Python to PATH" during installation
-
-### macOS:
-1. Open Terminal and install Homebrew if you don't have it:
+1. Download the latest Miniforge3 Windows installer from [conda-forge.org](https://conda-forge.org/download/)
+2. Run the installer and follow the on-screen instructions
+   - Check "Add Miniforge3 to my PATH"
+   - Choose "Just Me" installation
+3. Open a new terminal and verify installation:
    ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-2. Install Python:
-   ```bash
-   brew install python
+   conda --version
+   mamba --version
    ```
 
-### Linux (Ubuntu/Debian):
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
+### macOS (Intel or Apple Silicon):
+1. Open Terminal
+2. Download the latest Miniforge3 installer from [conda-forge.org](https://conda-forge.org/download/)
+   - Or use the command line:
+   ```bash
+   curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-$(uname -m).sh
+   bash Miniforge3-MacOSX-$(uname -m).sh -b
+   ```
+3. Close and reopen your terminal
+4. Verify installation:
+   ```bash
+   conda --version
+   mamba --version
+   ```
 
-### Linux (Fedora):
-```bash
-sudo dnf install python3 python3-pip
-```
+### Linux:
+1. Download the latest Miniforge3 installer from [conda-forge.org](https://conda-forge.org/download/)
+   - Or use the command line:
+   ```bash
+   curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-$(uname -m).sh
+   bash Miniforge3-Linux-$(uname -m).sh -b
+   ```
 
-### Verify Installation:
-```bash
-python --version  # Should be 3.10 or higher
+# Close and reopen your terminal, then verify:
+conda --version
+mamba --version
 ```
 
 ---
@@ -104,11 +116,28 @@ git --version
 
 ---
 
-## 4. Install JupyterLab and Required Libraries
+## 4. Create and Activate Conda Environment
 
-1. Install JupyterLab and essential data science libraries:
+1. Create a new conda environment with Python 3.10:
    ```bash
-   pip install jupyterlab jupyterlab-git xarray numpy pandas matplotlib cartopy netCDF4 scipy seaborn plotly
+   mamba create -n acam2025 python=3.10
+   ```
+
+2. Activate the environment:
+   - Windows:
+     ```bash
+     conda activate acam2025
+     ```
+   - macOS/Linux:
+     ```bash
+     conda activate acam2025
+     ```
+
+## 5. Install Required Packages
+
+1. Install core scientific packages using mamba (faster than conda):
+   ```bash
+   mamba install -c conda-forge jupyterlab jupyterlab-git xarray numpy pandas matplotlib cartopy netcdf4 scipy seaborn plotly
    ```
 
 2. Install JupyterLab extensions:
@@ -117,47 +146,73 @@ git --version
    jupyter lab build
    ```
 
+3. (Optional) Install additional useful packages:
+   ```bash
+   mamba install -c conda-forge dask h5py scikit-learn
+   ```
+
 ---
 
-## 5. Launch JupyterLab
+## 6. Launch JupyterLab
 
-1. From the terminal, navigate to your project directory:
+1. Activate your conda environment if not already active:
+   ```bash
+   conda activate acam2025
+   ```
+
+2. Navigate to your project directory:
    ```bash
    cd ~/Documents/ACAM_2025_Training_School_Material
    ```
-2. Start JupyterLab:
+
+3. Start JupyterLab:
    ```bash
    jupyter lab
    ```
-3. JupyterLab will open automatically in your default web browser at `http://localhost:8888/lab`
+
+4. JupyterLab will open automatically in your default web browser at `http://localhost:8888/lab`
    > **Note:** No account or sign-up is required to use JupyterLab locally. It runs entirely in your browser but doesn't require any online authentication.
 
 ---
 
-## 6. Troubleshooting
+## 7. Troubleshooting
 
 ### Common Issues:
 
 1. **Command not found**
-   - Ensure Python is in your system PATH
+   - Ensure Miniforge is properly installed and in your system PATH
    - Close and reopen your terminal after installation
    - On Windows, try using PowerShell instead of Command Prompt
+   - Verify conda initialization by running: `conda init`
 
-2. **JupyterLab not opening in browser**
+2. **Environment activation issues**
+   - If you get "command not found: conda", run: `source ~/miniforge3/etc/profile.d/conda.sh` (adjust path if installed elsewhere)
+   - Then try activating the environment again
+
+3. **JupyterLab not opening in browser**
    - Try accessing it manually at `http://localhost:8888/lab`
    - Check for error messages in the terminal
+   - Ensure no other application is using port 8888
 
-3. **Port already in use**
+4. **Port already in use**
    ```bash
    jupyter lab --port 8889
    ```
 
 ### Getting Help:
 - Visit [JupyterLab documentation](https://jupyterlab.readthedocs.io/)
+- Check [conda-forge documentation](https://conda-forge.org/)
 - Contact the training organizers for assistance
 
 ---
 
 ## Note for Training Participants
 
-A pre-configured environment will be provided at the training venue. These instructions are for reference only. Please contact the training organizers if you need assistance setting up your local environment.
+A pre-configured environment will be provided at the training venue. These instructions are for reference if you want to set up your own environment. The conda environment file (`environment.yml`) is included in the repository for easy environment recreation:
+
+```bash
+# After cloning the repository
+cd ACAM_2025_Training_School_Material
+conda env create -f environment.yml
+conda activate acam2025
+```
