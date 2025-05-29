@@ -1,4 +1,4 @@
-# JupyterLab Setup for ACAM 2025 Training School
+# Project-Work Setup for ACAM 2025 Training School
 
 This guide provides instructions for setting up JupyterLab on your local machine for the ACAM 2025 Training School. The environment will be pre-configured at the venue, but these instructions are provided for reference.
 
