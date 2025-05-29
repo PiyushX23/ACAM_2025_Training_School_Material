@@ -6,7 +6,6 @@ This repository contains training materials for the 6th Atmospheric Composition 
 
 This repository includes:
 
-- Lecture slides
 - Practical exercises
 - Code examples
 - Datasets
@@ -35,7 +34,7 @@ Each folder in this repository corresponds to a specific session or topic covere
 To use the materials in this repository, you will need:
 
 - Python 3.8 or higher
-- Jupyter Notebook/Lab
+- Jupyter Notebook/Lab (see [JupyterLab Setup Guide](JUPYTERLAB_SETUP.md) for installation instructions)
 - Required Python packages (listed in requirements.txt)
 
 ## Installation
