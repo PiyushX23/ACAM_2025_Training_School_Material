@@ -1,43 +1,48 @@
-# Step-by-Step Tutorial: Setting Up JupyterLab and Git for ACAM 2025
+# JupyterLab Setup for ACAM 2025 Training School
 
-This guide provides comprehensive instructions for setting up your local development environment for the ACAM 2025 Training School. It covers installation of Anaconda, JupyterLab, Git, and essential Python libraries across Windows, macOS, and Linux.
+This guide provides instructions for setting up JupyterLab on your local machine for the ACAM 2025 Training School. The environment will be pre-configured at the venue, but these instructions are provided for reference.
 
 ## Table of Contents
-- [1. Install Anaconda](#1-install-anaconda-python-distribution)
+- [1. Install Python](#1-install-python)
 - [2. Install Git](#2-install-git)
 - [3. Clone the Training Repository](#3-clone-the-training-repository)
-- [4. Create and Activate a Conda Environment](#4-create-and-activate-a-conda-environment)
-- [5. Install JupyterLab and Required Libraries](#5-install-jupyterlab-and-required-libraries)
-- [6. Launch JupyterLab](#6-launch-jupyterlab)
-- [7. Optional: Install JupyterLab Git Extension](#7-optional-install-jupyterlab-git-extension)
-- [8. Troubleshooting](#8-troubleshooting)
+- [4. Install JupyterLab and Required Libraries](#4-install-jupyterlab-and-required-libraries)
+- [5. Launch JupyterLab](#5-launch-jupyterlab)
+- [6. Troubleshooting](#6-troubleshooting)
 
 ---
 
-## 1. Install Anaconda (Python Distribution)
+## 1. Install Python
 
-### Windows/macOS/Linux:
+### Windows:
+1. Download and install Python 3.10+ from [python.org](https://www.python.org/downloads/)
+   - Check "Add Python to PATH" during installation
 
-1. Go to: [Anaconda Distribution](https://www.anaconda.com/products/distribution)
-2. Download the installer for your operating system:
-   - Windows: 64-Bit Graphical Installer
-   - macOS: Choose Intel or Apple Silicon (M1/M2) as per your Mac
-   - Linux: 64-Bit (x86) Installer
-3. Run the installer with default settings
-   - **Important**: Select "Add Anaconda to PATH" when prompted (Windows)
-   - Choose "Install for me only" (recommended)
-4. Complete the installation
+### macOS:
+1. Open Terminal and install Homebrew if you don't have it:
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+2. Install Python:
+   ```bash
+   brew install python
+   ```
 
-### Verify Installation:
-
-Open a new terminal/command prompt and run:
-
+### Linux (Ubuntu/Debian):
 ```bash
-conda --version
-python --version
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
 ```
 
-You should see version numbers for both commands.
+### Linux (Fedora):
+```bash
+sudo dnf install python3 python3-pip
+```
+
+### Verify Installation:
+```bash
+python --version  # Should be 3.10 or higher
+```
 
 ---
 
@@ -98,38 +103,22 @@ git --version
 
 ---
 
-## 4. Create and Activate a Conda Environment
-
-1. Create a new conda environment with Python 3.10:
-   ```bash
-   conda create -n acam_env python=3.10 -y
-   ```
-2. Activate the environment:
-   - Windows:
-     ```bash
-     conda activate acam_env
-     ```
-   - macOS/Linux:
-     ```bash
-     source activate acam_env
-     ```
-
----
-
-## 5. Install JupyterLab and Required Libraries
+## 4. Install JupyterLab and Required Libraries
 
 1. Install JupyterLab and essential data science libraries:
    ```bash
-   conda install -c conda-forge jupyterlab xarray numpy pandas matplotlib cartopy netCDF4 scipy -y
+   pip install jupyterlab jupyterlab-git xarray numpy pandas matplotlib cartopy netCDF4 scipy seaborn plotly
    ```
-2. Install additional packages as needed:
+
+2. Install JupyterLab extensions:
    ```bash
-   pip install seaborn plotly
+   jupyter labextension install @jupyter-widgets/jupyterlab-manager @jupyterlab/git @jupyterlab/toc jupyterlab-plotly
+   jupyter lab build
    ```
 
 ---
 
-## 6. Launch JupyterLab
+## 5. Launch JupyterLab
 
 1. From the terminal, navigate to your project directory:
    ```bash
@@ -143,27 +132,14 @@ git --version
 
 ---
 
-## 7. Optional: Install JupyterLab Git Extension
-
-For better Git integration in JupyterLab:
-
-```bash
-pip install jupyterlab-git
-jupyter lab build
-```
-
-If you encounter any server extension errors, you can continue using Git from the command line.
-
----
-
-## 8. Troubleshooting
+## 6. Troubleshooting
 
 ### Common Issues:
 
 1. **Command not found**
-   - Ensure Anaconda is in your system PATH
+   - Ensure Python is in your system PATH
    - Close and reopen your terminal after installation
-   - On Windows, try using "Anaconda Prompt" instead of Command Prompt
+   - On Windows, try using PowerShell instead of Command Prompt
 
 2. **JupyterLab not opening in browser**
    - Try accessing it manually at `http://localhost:8888/lab`
@@ -174,24 +150,12 @@ If you encounter any server extension errors, you can continue using Git from th
    jupyter lab --port 8889
    ```
 
-4. **Environment not activating**
-   - On Windows, use `activate acam_env` (without 'conda')
-   - On macOS/Linux, use `source activate acam_env`
-
-5. **Missing packages**
-   ```bash
-   conda install package_name
-   # or
-   pip install package_name
-   ```
-
 ### Getting Help:
-- Check the [JupyterLab documentation](https://jupyterlab.readthedocs.io/)
-- Visit [Anaconda documentation](https://docs.anaconda.com/)
+- Visit [JupyterLab documentation](https://jupyterlab.readthedocs.io/)
 - Contact the training organizers for assistance
 
 ---
 
-## You're all set!
+## Note for Training Participants
 
-You now have a fully functional development environment for the ACAM 2025 Training School. If you encounter any issues during the setup, please don't hesitate to reach out to the training organizers for assistance.
+A pre-configured environment will be provided at the training venue. These instructions are for reference only. Please contact the training organizers if you need assistance setting up your local environment.
