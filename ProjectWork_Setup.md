@@ -58,7 +58,28 @@ mamba --version
 
 ---
 
-## 2. Install Git
+## 2. Install UV (Alternative Package Manager)
+
+UV is a fast Python package installer and resolver written in Rust. It's significantly faster than pip and can be used as an alternative to conda.
+
+### Windows:
+1. Open PowerShell and run:
+   ```powershell
+   powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+   ```
+2. Restart your terminal
+
+### macOS/Linux:
+```bash
+curl -sSf https://astral.sh/uv/install.sh | sh
+```
+
+### Verify Installation:
+```bash
+uv --version
+```
+
+## 3. Install Git
 
 ### Windows:
 1. Download Git from: [git-scm.com/download/win](https://git-scm.com/download/win)
@@ -116,11 +137,15 @@ git --version
 
 ---
 
-## 4. Create and Activate Conda Environment
+## 4. Create and Activate Virtual Environment
+
+You can choose either Conda (Section 4.1) or UV (Section 4.2) for environment management.
+
+### 4.1 Using Conda (Original Method)
 
 1. Create a new conda environment with Python 3.10:
    ```bash
-   mamba create -n acam2025 python=3.10
+   mamba create -n acam2025
    ```
 
 2. Activate the environment:
@@ -133,8 +158,33 @@ git --version
      conda activate acam2025
      ```
 
+### 4.2 Using UV (Faster Alternative)
+
+1. Navigate to your project directory:
+   ```bash
+   cd ~/Documents/ACAM_2025_Training_School_Material
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   # Create virtual environment
+   uv venv .venv
+   
+   # Activate the environment
+   # On macOS/Linux:
+   source .venv/bin/activate
+   # On Windows:
+   # .venv\Scripts\activate
+   ```
+
+3. Install required packages:
+   ```bash
+   uv add h5py numpy pandas scipy xarray netCDF4 matplotlib cartopy seaborn jupyterlab
+   ```
+
 ## 5. Install Required Packages
 
+### If using Conda (Section 4.1):
 1. Install core scientific packages using mamba (faster than conda):
    ```bash
    mamba install -c conda-forge jupyterlab jupyterlab-git xarray numpy pandas matplotlib cartopy netcdf4 scipy seaborn plotly
@@ -149,6 +199,20 @@ git --version
 3. (Optional) Install additional useful packages:
    ```bash
    mamba install -c conda-forge dask h5py scikit-learn
+   ```
+
+### If using UV (Section 4.2):
+1. The required packages were already installed during environment setup.
+   
+2. To install JupyterLab extensions:
+   ```bash
+   jupyter labextension install @jupyter-widgets/jupyterlab-manager @jupyterlab/git @jupyterlab/toc jupyterlab-plotly
+   jupyter lab build
+   ```
+   
+3. (Optional) Install additional packages:
+   ```bash
+   uv add dask scikit-learn
    ```
 
 ---

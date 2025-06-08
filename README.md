@@ -66,3 +66,11 @@ If you would like to contribute to this repository, please:
 
 For questions about these materials, please contact:
 - [Contact information to be added]
+
+Region of interest :
+SE : 7, 95
+NW : 23, 110
+
+Data downloaded for region:
+SE: 12,98
+NW: 17,103
