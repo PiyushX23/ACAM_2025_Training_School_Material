@@ -20,15 +20,6 @@ Each folder in this repository corresponds to a specific session or topic covere
 - Data files
 - Documentation
 
-## Sessions
-
-| Session | Topic | Materials |
-|---------|-------|-----------|
-| Session 1 | Introduction to Satellite Data | [Link to folder](#) |
-| Session 2 | Air Quality Observations | [Link to folder](#) |
-| Session 3 | Modeling Techniques | [Link to folder](#) |
-| Session 4 | Data Analysis and Visualization | [Link to folder](#) |
-
 ## Requirements
 
 To use the materials in this repository, you will need:
@@ -50,6 +41,30 @@ cd ACAM_2025_Training_School_Material
 pip install -r requirements.txt
 ```
 
+## 4. Create and Activate Virtual Environment (using UV)
+1. Navigate to your project directory:
+   ```bash
+   cd ~/Documents/ACAM_2025_Training_School_Material
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   # Create virtual environment
+   uv venv .venv
+   
+   # Activate the environment
+   # On macOS/Linux:
+   source .venv/bin/activate
+   # On Windows:
+   # .venv\Scripts\activate
+   ```
+
+3. Install required packages:
+   ```bash
+   uv add h5py numpy pandas scipy xarray netCDF4 matplotlib cartopy seaborn jupyterlab
+   ```
+
+   
 ## Contributing
 
 If you would like to contribute to this repository, please:
