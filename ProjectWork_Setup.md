@@ -6,7 +6,8 @@ This guide provides step-by-step instructions for setting up your development en
 1. [Install Required Software](#1-install-required-software)
    - [1.1 Install Git](#11-install-git)
    - [1.2 Install Miniforge](#12-install-miniforge)
-   - [1.3 Install UV (Optional)](#13-install-uv-optional)
+   - [1.3 Install JupyterLab](#13-install-jupyterlab)
+   - [1.4 Install UV (Optional)](#14-install-uv-optional)
 2. [Get the Training Materials](#2-get-the-training-materials)
 3. [Set Up Python Environment](#3-set-up-python-environment)
    - [3.1 Using Conda (Recommended)](#31-using-conda-recommended)
@@ -69,7 +70,42 @@ conda --version
 mamba --version
 ```
 
-### 1.3 Install UV (Optional)
+### 1.3 Install JupyterLab
+
+JupyterLab is an interactive development environment for working with notebooks, code, and data.
+
+#### Windows:
+1. Using Miniforge (recommended):
+   ```bash
+   conda install -c conda-forge jupyterlab
+   ```
+2. Using pip (alternative):
+   ```bash
+   pip install jupyterlab
+   ```
+
+#### macOS/Linux:
+```bash
+# Using conda (recommended)
+conda install -c conda-forge jupyterlab
+
+# Or using pip
+# pip install jupyterlab
+
+# Or using your system package manager
+# Ubuntu/Debian:
+# sudo apt install jupyter-notebook jupyter
+# 
+# Fedora:
+# sudo dnf install python3-jupyter-core python3-jupyter-notebook
+```
+
+#### Verify Installation:
+```bash
+jupyter --version
+```
+
+### 1.4 Install UV (Optional)
 
 UV is a fast Python package installer.
 
