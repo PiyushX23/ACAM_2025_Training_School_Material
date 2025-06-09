@@ -176,6 +176,15 @@ You can choose either Conda (Section 4.1) or UV (Section 4.2) for environment ma
    # On Windows:
    # .venv\Scripts\activate
    ```
+# Install ipykernel in your UV environment:
+   uv add ipykernel
+
+# Register the kernel with Jupyter:
+python -m ipykernel install --user --name=acam2025 --display-name="Python (ACAM2025)"
+
+# Note: If you don't see your kernel in the list:
+# Make sure JupyterLab is installed in the same environment:
+uv add jupyterlab
 
 3. Install required packages:
    ```bash
