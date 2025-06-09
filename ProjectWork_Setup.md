@@ -119,18 +119,29 @@ uv --version
 
 1. Create and activate environment:
    ```bash
+   # Create a new virtual environment
    uv venv .venv
+   
+   # Activate the environment
    # On macOS/Linux:
    source .venv/bin/activate
    # On Windows:
    # .venv\Scripts\activate
-   ```
-
-2. Set up Jupyter kernel:
-   ```bash
+   
+   # Install required packages for Jupyter
    uv add ipykernel jupyterlab
+   
+   # Register the kernel with Jupyter
    python -m ipykernel install --user --name=acam2025 --display-name="Python (ACAM2025)"
+   
+   # Verify the kernel is installed
+   jupyter kernelspec list
    ```
+   
+   > **Note:** If you don't see your kernel in JupyterLab:
+   > 1. Make sure JupyterLab is installed in the same environment
+   > 2. Try refreshing the JupyterLab page
+   > 3. Restart JupyterLab if needed
 
 ---
 
