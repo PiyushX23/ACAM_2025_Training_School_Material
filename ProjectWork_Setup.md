@@ -192,7 +192,7 @@ jupyter lab build
 
 ### If using UV:
 ```bash
-uv add jupyterlab xarray numpy pandas matplotlib cartopy netCDF4 scipy seaborn plotly dask h5py scikit-learn
+uv add jupyterlab xarray numpy pandas matplotlib cartopy netCDF4 scipy seaborn plotly dask h5py
 jupyter labextension install @jupyter-widgets/jupyterlab-manager @jupyterlab/git @jupyterlab/toc jupyterlab-plotly
 jupyter lab build
 ```
