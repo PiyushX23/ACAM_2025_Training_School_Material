@@ -1,0 +1,573 @@
+<HTML>
+<BODY>
+<PRE>
+---------------------------------------------------------------------
+
+Atmospheric Methane Dry Air Mole Fractions from the
+NOAA GML Carbon Cycle Cooperative Global Air
+Sampling Network, starting in 1983
+
+Version: 2025-03-13
+--------------------------------------------------------------------
+CONTENTS
+
+1.       Data source and contacts
+2.       Use of data
+2.1      Citation
+3.       License 
+4.       Warnings
+5.       Update notes
+6.       Introduction
+7.       DATA - General Comments
+7.1      DATA - Sampling Locations
+7.2      DATA - File Name Description
+7.3      DATA - File Types
+7.4      DATA - Content
+7.5      DATA - QC Flags
+7.6      DATA - Collection Methods
+7.7      DATA - Monthly Averages
+8.       Data retrieval
+9.       References
+
+--------------------------------------------------------------------
+1. DATA SOURCE AND CONTACTS
+
+National Oceanic and Atmospheric Administration (NOAA)
+Global Monitoring Laboratory (GML)
+Carbon Cycle Greenhouse Gases (CCGG)
+
+Correspondence concerning these data should be directed to:
+
+Dr. Xin Lan
+NOAA Global Monitoring Laboratory
+325 Broadway, R/GML-1
+Boulder, Colorado, 80305 USA
+
+Email: 
+xin.lan@noaa.gov
+
+
+--------------------------------------------------------------------
+2. USE OF DATA
+
+These data are made freely available to the public and the scientific
+community in the belief that their wide dissemination will lead to
+greater understanding and new scientific insights. To ensure that GML
+receives fair credit for their work please include relevant citation
+text in publications. We encourage users to contact the data providers,
+who can provide detailed information about the measurements and
+scientific insight.  In cases where the data are central to a
+publication, coauthorship for data providers may be appropriate.
+
+
+
+2.1 CITATION
+
+Please reference these data as
+
+   Lan, X., J.W. Mund, A.M. Crotwell, K.W. Thoning, E. Moglia, M. Madronich,
+   K. Baugh, G. Petron, M.J. Crotwell, D. Neff, S. Wolter, T. Mefford and S. DeVogel
+   (2025), Atmospheric Methane Dry Air Mole Fractions from the NOAA GML
+   Carbon Cycle Cooperative Global Air Sampling Network, 1983-2024, 
+   Version: 2025-03-13, https://doi.org/10.15138/VNCZ-M766
+
+--------------------------------------------------------------------
+3. LICENSE
+
+<p>These data were produced by NOAA and are not subject to copyright
+protection in the United States. NOAA waives any potential copyright and
+related rights in these data worldwide through the Creative Commons Zero
+1.0 Universal Public Domain Dedication (CC0 1.0)</p><a
+
+href=https://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1 style="display:inline-
+block;" target="_blank">CC0 1.0 Universal<img
+
+src=https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1
+style="height:22px!important; margin-left:3px;" /><img
+src=https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1
+style="height:22px!important; margin-left:3px;" /></a>
+
+
+
+--------------------------------------------------------------------
+4. WARNINGS
+
+Every effort is made to produce the most accurate and precise
+measurements possible.  However, we reserve the right to make
+corrections to the data based on recalibration of standard gases
+or for other reasons deemed scientifically justified.
+
+We are not responsible for results and conclusions based on use
+of these data without regard to this warning.
+
+
+--------------------------------------------------------------------
+5. UPDATE NOTES
++++++++++++++++++++++++++++++++
+Lab-wide notes:
+
+2011-10-07
+
+We introduced the term "measurement group", which identifies
+the group within NOAA or Institute of Arctic and Alpine Research (INSTAAR)
+University of Colorado Boulder that made the measurement.  We can 
+now have multiple groups measuring some of the same trace gas species 
+in our discrete samples.  
+
+Measurement groups within NOAA and INSTAAR are 
+
+  ccgg:  NOAA Carbon Cycle Greenhouse Gases group (CCGG)
+  hats:  NOAA Halocarbons and other Atmospheric Trace Species group (HATS)
+  arl:   INSTAAR Atmospheric Research Laboratory (ARL)
+  sil:   INSTAAR Stable Isotope Laboratory (SIL)
+  curl:  INSTAAR Laboratory for Radiocarbon Preparation and Research (CURL)
+
++++++++++++++++++++++++++++++++
+
+Project-specific notes:
+
+2022-07-21
+
+Dataset is now provided in self describing ObsPack format with improved metadata.
+Surface flask event data are available in NetCDF and ASCII text. Surface flask
+monthly data are available in ASCII text. Shipboard data binned by 5 or 3 degrees
+are now removed from surface flask event data, but still provided in monthly data.
+This format change makes some previous notes irrelevant.
+
+
++++++++++++++++++++++++++++++++
+Parameter-specific notes:
+
+2023-05-01
+
+In Spring 2023, we moved to an internal quality control
+(QC) tagging system for the flask air samples.
+There are three categories of tags documenting
+issues associated with sample collection, measurement
+and representativity in the CCGG database.
+Tags are more specific than flags, which allows
+a more granular internal tracking and analysis of QC issues.
+
+Tags are converted to simplified 3 character flags in the data
+files for external data users.  See section 7.5 for more details.
+
+2018-07-30
+
+Uncertainties recalculated after reassessment of
+uncertainty terms. Uncertainties on early data are
+now larger than before.
+
+2015-07-07
+
+We updated and extended the WMO CH4 X2004 scale to X2004A.
+Details are described on a dedicated web page: 
+http://www.esrl.noaa.gov/gmd/ccl/ch4_scale.html. 
+
+--------------------------------------------------------------------
+6. INTRODUCTION
+
+All samples were analyzed for methane at NOAA GML in Boulder, Colorado
+by gas chromatography with flame ionization detection or by cavity ring-
+down spectroscopy (since August, 2019), and each sample aliquot was 
+referenced to the NOAA 2004A methane standard scale
+(see www.esrl.noaa.gov/gmd/ccl/ch4_scale.html; Dlugokencky et al., 2005).
+Measurements are reported in units of nanomol/mol (10^-9 mol CH4 per mol
+of dry air (nmol/mol) or parts per billion (ppb))
+
+For measurements using gas chromatography measurements, aliquots of sample
+and standard gas are injected into a gas chromatograph (GC) alternatively 
+with a sampling valve.  Methane (CH4) is separated from other sample 
+constituents using packed columns and detected using flame ionization (FID).
+This process is highly automated for field and laboratory operations.
+Through most of the period 1983-1991, one flask of a sample pair was analyzed
+for methane, and, whenever the overpressure was sufficient, at least two 
+aliquots were analyzed. We have used the difference in methane mole fraction 
+between the first and second aliquot to establish the repeatability of the 
+measurement. The average repeatability has been approximately 3 ppb before 1991.  
+In October 1991, our analysis procedure was altered; we began analyzing a single
+aliquot from both members of the flask pair. The principle reasons for the change
+were to simplify flask handling procedures (the carbon dioxide and carbon monoxide
+projects also measure both flasks of the sample pair) and to have flask pair 
+agreement (the difference in methane mole fraction between the two flasks collected 
+simultaneously) as an additional diagnostic to use in evaluating the quality 
+of the data.  The repeatability of the analytical instrument is now assessed 
+by two approaches: approximately monthly measurements of target tanks, and 
+assessing the relative stability of the standard or reference gas aliquots 
+during each day of flask measurements.  (See Steele et al., 1987, Lang et 
+al., 1990a,b, Dlugokencky et al., 1994b, and Dlugokencky et al., 2005 for 
+details of the sampling network, equipment, standards, and procedures.)
+Repeatability after 1991 has ranged from 1 to 2 ppb over the period of our GC
+measurements.
+
+In August, 2019, we switched from GC/FID to a Cavity Ring-Down 
+Spectrometer that analyzes CH4 and CO2. The analyzer is calibrated 
+off-line with a suite of standards once per month relative to a 
+dry, natural reference air in a high-pressure cylinder. All air 
+samples are measured relative to the same reference, and CH4 and CO2 
+values in measured samples are calculated based on their ratio to 
+the reference.  Repeatability of the analyzer, based on repeated 
+analysis of air from a high-pressure cylinder, is ~0.2 ppb (1 sigma). 
+
+
+
+-------------------------------------------------------------------
+7. DATA - GENERAL COMMENTS
+
+Uncertainties of the CH4 measurements are included.
+Key components of it are our ability to propagate the WMO XCH4
+scale to working standards, the repeatability of the analyzers
+used for sample measurement, and the long-term variability of 
+the analyzer responses (reproducibility). The scale propagation 
+uncertainty is estimated to be 0.2 ppb, based on the reproducibility 
+determined for scale propagation in our calibration laboratory.
+Long-term reproducibility is estimated to be +/- 0.5 ppb based on 
+repeated measurements of air from a high-pressure cylinder, or
+the long-term variability in the differences between measurements 
+of test flasks on the sample analysis system and separate 
+measurements of the test gas used to fill the test flasks. The
+three terms are added in quadrature (square root of the sum of the
+squares) to estimate the measurement uncertainty at 68% confidence
+interval.  
+
+Pacific Ocean Cruise (POC, travelling between the US west coast
+and New Zealand or Australia) flask-air samples were collected in
+about 5 degree latitude intervals. For South China Sea (SCS), samples
+ were collected at about 3 degree latitude intervals.
+
+Sampling intervals are approximately weekly for fixed sites
+and average one sample every 3 weeks per latitude zone for POC and
+about one sample every week per latitude for SCS.
+
+Historically, samples have been collected using two general methods:
+flushing and then pressurizing glass flasks with a pump, or opening a
+stopcock on an evacuated glass flask; since 28 April 2003, only the
+former method is used.  During each sampling event, a pair of flasks
+is filled.
+
+-------------------------------------------------------------------
+7.1 DATA - SAMPLING LOCATIONS
+
+For a summary of sampling locations, please visit
+
+<A HREF='https://gml.noaa.gov/dv/site/?program=ccgg'>https://gml.noaa.gov/dv/site/?program=ccgg</A>.
+
+Note: Data for all species may not be available for all sites listed 
+in the table.
+
+To view near real-time data, manipulate and compare data, and create
+custom graphs, please visit
+
+<A HREF='https://gml.noaa.gov/dv/iadv/'>https://gml.noaa.gov/dv/iadv/</A>.
+
+-------------------------------------------------------------------
+7.2 DATA - FILE NAME DESCRIPTION
+
+Encoded into each file name are the parameter (trace gas identifier); sampling 
+site; sampling project; laboratory ID number; measurement group (optional); and optional 
+qualifiers that further define the file contents.
+
+All file names use the following naming scheme:
+
+         1      2         3               4                   5            
+[parameter]_[site]_[project]_[lab ID number]_[optional measurement group]_[optional 
+
+         6           7
+qualifiers].[file type]
+
+
+1. [parameter]
+
+   Identifies the measured parameter or trace gas species.
+
+   (ex)
+   co2      Carbon dioxide
+   ch4      Methane
+   co2c13   d13C (co2)
+   merge    more than one parameter
+
+2. [site]
+
+   Identifies the sampling site code.
+
+   (ex)
+   brw
+   pocn30
+   car
+   amt
+
+3. [project]
+   
+   Identifies sampling platform and strategy.
+
+   (ex)
+   surface-flask
+   surface-pfp
+   surface-insitu
+   aircraft-pfp
+   aircraft-insitu
+   tower-insitu
+
+4. [lab ID number]
+
+   A numeric field that identifies the sampling laboratory (1,2,3, ...).
+   NOAA GML is lab number 1 (see https://gml.noaa.gov/ccgg/obspack/labinfo.html).
+
+5. [optional measurement group]
+
+  Identifies the group within the NOAA GML or the Institute of Arctic and Alpine
+  Research (INSTAAR) at the University of Colorado Boulder that made the
+  measurement.
+  It is possible to have multiple different groups measuring some of the same
+  trace gas species in our discrete samples.  
+
+  Measurement groups within NOAA and INSTAAR are 
+
+  ccgg:  NOAA Carbon Cycle Greenhouse Gases group (CCGG)
+  hats:  NOAA Halocarbons and other Atmospheric Trace Species group (HATS)
+  arl:   INSTAAR Atmospheric Research Laboratory (ARL)
+  sil:   INSTAAR Stable Isotope Laboratory (SIL)
+  curl:  INSTAAR Laboratory for Radiocarbon Preparation and Research (CURL)
+
+
+6. [optional qualifiers]
+
+   Optional qualifier(s) may indicate data subsetting or averaging.
+   Multiple qualifiers are delimited by an underscore (_).  A more detailed
+   description of the file contents is included within each data file.
+
+   (ex)
+   event         All measurement results for all collected samples (discrete (flask) data only).
+   month         Computed monthly averages all collected samples (discrete (flask) data only).
+   hour_####     Computed hourly averages for the specified 4-digit year (quasi-continuous data only)
+   HourlyData    Computed hourly averages for entire record (quasi-continuous data only)
+   DailyData     Computed daily averages for entire record (quasi-continuous data only)
+   MonthlyData   Computed monthly averages for entire record (quasi-continuous data only)
+
+7. [file type]
+   
+   File format (netCDF, ASCII text). 
+
+   (ex) 
+
+   txt           ASCII text file
+   nc            netCDF4 file
+
+-------------------------------------------------------------------
+7.3 DATA - FILE TYPE
+
+We now provide some NOAA Global Monitoring Laboratory measurements
+in two unique file formats; netCDF and ASCII text. 
+
+The Network Common Data Form (NetCDF) is a self-describing, machine-independent
+data format that supports creation, access, and sharing of array-oriented
+scientific data.  To learn more about netCDF and how to read netCDF
+files, please visit http://www.unidata.ucar.edu. 
+
+The ASCII text (technically UTF-8 encoded) file is derived directly from the 
+netCDF file.  The text file is also self-describing and can be viewed using 
+any ASCII or UTF-8 capable text editor.  "Self-describing" means the file 
+includes enough information about the included data (called metadata) 
+that no additional file is required to understand the structure of the data 
+and how to read and use the data.  Note that some non-ASCII characters (accents,
+international character sets) may be present in various names and contact 
+information.  These may require a UTF-8 capable text editor to view properly.
+
+-------------------------------------------------------------------
+7.4 DATA - CONTENT
+
+
+See individual files for description of the provided variables and other
+dataset metadata.
+
+-------------------------------------------------------------------
+7.5 QC FLAGS
+
+Quality control 3-column flags indicate retained and rejected flask
+results as follows in datafiles.
+
+If the first character is not a period, the sample result should be
+rejected for scientific use due to sample collection and/or measurement
+issue. A second column character other than a period indicates a sample
+that is likely valid but does not meet selection for representativeness
+such as midday sampling or background air sampling. A third column flag
+other than a period indicates abnormal circumstances that are not thought
+to affect the data quality.
+
+                Flag    Description
+
+Retained        ...     good pair, no other issues
+
+Rejected        M..     sample measurement issue
+                C..     sample collection issue
+                B..     both measurement and collection issues
+
+Selection       .S.     selection issue. High/low mole fraction
+                        thought to not represent background
+                        conditions for example.
+
+Informational   ..M     informational measurement tag or
+                        potential measurement issue
+                ..C     informational collection tag or
+                        potential collection issue
+                ..P     preliminary data
+
+    The retained values comprise the data set that mostly represents
+CH4 distribution in the remote, well-mixed global surface atmosphere.
+Data with selection flag (with a 2nd column flag other than '.') are
+likely valid measurements, but represent poorly mixed air parcels
+influenced by local sources. Data selection is applied considering
+multiple measured gases from the same air sample , and sample
+conditions such as wind direction, wind speed, and back trajectory,
+in addition to identifying outliers using a curve fitting approach
+described in detail here:
+https://gml.noaa.gov/ccgg/mbl/crvfit/crvfit.html
+
+-------------------------------------------------------------------
+7.6 COLLECTION METHODS
+
+A single-character code is used to identify the sample collection method.
+The codes are:
+
+    P - Sample collected using a portable, battery
+ powered pumping unit.  Two flasks are
+ connected in series, flushed with air, and then
+ pressurized to 1.2 - 1.5 times ambient pressure.
+    D - Similar to P but the air passes through a
+ condenser cooled to about 5 deg C to partially
+  dry the sample.
+    G - Similar to D but with a gold-plated condenser.
+    T - Evacuated flask filled by opening an O-ring sealed       
+ stopcock.
+    S - Flasks filled at NOAA GML observatories by sampling
+ air from the in situ CO2 measurement air intake system.
+    N - Before 1981, flasks filled using a hand-held
+ aspirator bulb. After 1981, flasks filled using a
+ pump different from those used in method P, D, or G.
+    F - Five liter evacuated flasks filled by opening a
+ ground glass, greased stopcock
+
+-------------------------------------------------------------------
+7.7 DATA - MONTHLY AVERAGES
+
+The monthly data files in https://gml.noaa.gov/aftp/data/trace_gases/ch4/flask/surface/ 
+use the following naming scheme (see Section 7.2):
+
+     [parameter]_[site]_[project]_[lab ID number]_[measurement group]_month.txt
+
+(ex) CH4_pocn30_surface-flask_1_ccgg_month.txt contains CH4 ccgg monthly
+     mean values for all surface flask samples collected on the Pacific
+     Ocean Cruise sampling platform and grouped at 30N +/- 2.5 degrees.
+
+(ex) CO2_brw_surface-flask_1_ccgg_month.txt contains CO2 ccgg monthly
+     mean values for all surface flask samples collected at Barrow, Alaska.
+
+Monthly means are produced for each site by first averaging all
+valid measurement results in the event file with a unique sample
+date and time.  Values are then extracted at weekly intervals from 
+a smooth curve (Thoning et al., 1989) fitted to the averaged data 
+and these weekly values are averaged for each month to give the 
+monthly means recorded in the files.  Flagged data are excluded from the
+curve fitting process.  Some sites are excluded from the monthly
+mean directory because sparse data or a short record does not allow a
+reasonable curve fit.  Also, if there are 3 or more consecutive months
+without data, monthly means are not calculated for these months.
+
+The data files contain multiple lines of header information 
+followed by one line for each available month.
+
+Fields are defined as follows:
+
+Field 1:    [SITE CODE] The three-character sampling location code (see above).
+
+Field 2:    [YEAR] The sample collection year and month.
+Field 3:    [MONTH]
+
+Field 4:    [MEAN VALUE] Computed monthly mean value
+
+-------------------------------------------------------------------
+8. DATA RETRIEVAL
+
+All (ASCII text and netCDF) files are located in 
+"https://gml.noaa.gov/aftp/data/trace_gases/ch4/flask/surface/".
+
+To transfer all files in a directory, it is more efficient to 
+download the tar or zipped files. Individual or zipped files can
+be downloaded using your web browser by clicking the hyperlinked file
+or right clicking hyperlink and using browser menu to 'save as' or similar.
+
+Files can also be accessed by anonymous ftp at aftp.cmdl.noaa.gov. 
+
+-------------------------------------------------------------------
+9. REFERENCES
+
+
+Lan X, Nisbet EG, Dlugokencky EJ, Michel SE. 2021, What do we know about
+  the global methane budget? Results from four decades of atmospheric 
+  CH4 observations and the way forward. Phil. Trans. R. Soc. A 379:20200440. 
+  https://doi.org/10.1098/rsta.2020.0440
+
+Lan, X., Basu, S., Schwietzke, S., Bruhwiler, L. M. P., Dlugokencky,
+  E. J., Michel, S. E., et al. 2021, Improved constraints on global
+  methane emissions and sinks using δ13C-CH4. Global Biogeochemical
+  Cycles, 35, e2021GB007000. 
+  https://doi.org/10.1029/2021GB007000
+
+Dlugokencky, E.J., et al. 2009, Observational constraints on 
+  recent increases in the atmospheric CH4 burden, Geophys. Res. Lett.,
+  36, L18803, doi:10.1029/2009GL039780.
+
+Dlugokencky, E.J., R.C. Myers, P.M. Lang, K.A. Masarie, A.M. Crotwell,
+  K.W. Thoning, B.D. Hall, J.W. Elkins, and L.P. Steele, 2005, Conversion
+  of NOAA atmospheric dry air methane mole fractions to a 
+  gravimetrically-prepared standard scale, J. Geophys. Res., 110, D18306,
+  doi:10.1029/2005JD006035.
+
+Dlugokencky, E.J., B.P. Walter, K.A. Masarie, P.M. Lang, and E.S. Kasischke,
+  2001, Measurements of an anomalous global methane increase during 1998,
+  Geophys. Res. Lett., 28, 499-502.                                           
+
+Dlugokencky, E.J., K.A. Masarie, P.M. Lang, and P.P. Tans, 1998, 
+  Continuing decline in the growth rate of atmospheric methane,
+  Nature, 393, 447-450. 
+
+Dlugokencky, E.J., K.A. Masarie, P.M. Lang, P.P. Tans, L.P. Steele, and 
+  E.G. Nisbet, 1994a, A dramatic decrease in the growth rate of atmospheric 
+  methane in the northern hemisphere during 1992, Geophys. Res. Lett., 21, 
+  45-48.
+
+Dlugokencky, E.J., L.P. Steele, P.M. Lang, and K.A. Masarie, 1994b, The growth 
+  rate and distribution of atmospheric methane, J. Geophys. Res., 99, 17,021-
+  17,043.
+
+Lang, P.M., L.P. Steele, R.C. Martin, and K.A. Masarie, 1990a, Atmospheric 
+  methane data for the period 1983-1985 from the NOAA/GMCC global cooperative 
+  flask sampling network, NOAA Technical Memorandum ERL CMDL-1.
+
+Lang, P.M., L.P. Steele, and R.C. Martin, 1990b, Atmospheric methane data for 
+  the period 1986-1988 from the NOAA/CMDL global cooperative flask sampling 
+  network, NOAA Technical Memorandum ERL CMDL-2.
+
+Lang, P.M., L.P. Steele, L.S. Waterman, R.C. Martin, K.A. Masarie, and 
+  E.J. Dlugokencky, 1992, NOAA/CMDL Atmospheric methane data for the period
+  1983-1990 from shipboard flask sampling, NOAA Technical Memorandum ERL CMDL-4.
+
+Steele, L.P., P.J. Fraser, R.A. Rasmussen, M.A.K. Khalil, T.J. Conway, A.J. 
+  Crawford, R.H. Gammon, K.A. Masarie, and K.W. Thoning, 1987, The global 
+  distribution of methane in the troposphere, J. Atmos. Chem, 5, 125-171.
+
+Steele, L.P. and P.M. Lang, 1991, Atmospheric methane concentrations-the 
+  NOAA/CMDL global cooperative flask sampling network, 1983-1988, 
+  ORNL/CDIAC-42, NDP-038.
+
+Steele, L.P., E.J. Dlugokencky, P.M. Lang, P.P. Tans, R.C. Martin, and
+  K.A. Masarie, 1992, Slowing down of the global accumulation of atmospheric
+  methane during the 1980's, Nature, 358, 313.
+
+Thoning, K.W., P.P. Tans, and W.D. Komhyr, 1989,  Atmospheric carbon dioxide
+  at Mauna Loa Observatory 2.  Analysis of the NOAA GMCC Data, 1974-1985,
+  J. Geophys. Res., 94, 8549-8565.
+
+------------------------------------------------------------------- 
+</PRE>
+</BODY>
+</HTML>
